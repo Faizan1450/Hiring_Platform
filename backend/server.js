@@ -2,8 +2,8 @@ import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import cors from "cors"
-// import dns from "node:dns/promises";
-// dns.setServers(["1.1.1.1"]);
+import dns from "node:dns/promises";
+dns.setServers(["1.1.1.1"]);
 
 import hiringsRouter from "./routers/hiringsRouter.js";
 import healthCheckRouter from "./routers/healthCheck.js";

@@ -3,7 +3,7 @@ const healthCheckRouter = express.Router();
 
 
 healthCheckRouter.get("/", (req, resp) => {
-    res.status(200).json({ status: "active" });
+    resp.status(200).json({ status: "active" });
 });
 
 export default healthCheckRouter;
