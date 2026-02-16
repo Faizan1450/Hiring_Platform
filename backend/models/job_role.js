@@ -65,7 +65,10 @@ const jobSchema = new mongoose.Schema({
     ],
     cgpa: {
         type: Number,
-        default: 0
+        required: true,
+        min: -1,
+        max: 10,
+        default: -1
     },
     skills: [
         {
@@ -76,7 +79,7 @@ const jobSchema = new mongoose.Schema({
     ],
     platform: {
         type: String,
-        enum: ["LinkedIn", "Naukri", "Company Site", "Other"],
+        enum: ["LinkedIn", "Naukri", "Company Site", "Internal Portal", "Other"],
         required: true
     },
     redirected_link: {

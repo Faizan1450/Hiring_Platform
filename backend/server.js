@@ -2,27 +2,21 @@ import express from "express";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
 import cors from "cors"
+// import dns from "node:dns/promises";
+// dns.setServers(["1.1.1.1"]);
 
-import router from "./routes/roleRoutes.js";
+import hiringsRouter from "./routers/hiringsRouter.js";
 
 dotenv.config();
+await connectDB();
 
 const app = express();
 app.use(express.json());
-app.use((req, res, next) => {
-    res.setHeader("Access-Control-Allow-Origin", "*");
-    res.setHeader("Access-Control-Allow-Headers", "Content-Type");
-    next();
-});
-
-const PORT = process.env.PORT;
-
-await connectDB();
+app.use("/api/v1/hirings", hiringsRouter)
 app.use(cors());
 
-app.use("/api/v1", router)
-
 //Server Start
+const PORT = process.env.PORT;
 const server = app.listen(PORT, () => {
     console.log(`Server is running at PORT ${PORT}`)
 });
