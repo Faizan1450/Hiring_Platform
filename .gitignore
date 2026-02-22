@@ -1,0 +1,30 @@
+# Node dependencies
+node_modules/
+
+# Environment variables
+.env
+
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Editor configs
+.vscode/
+.idea/
+
+# Build outputs (future-proof)
+dist/
+build/
+
+# Frontend deps (if you add later)
+index.html
+
+# Coverage
+coverage/
