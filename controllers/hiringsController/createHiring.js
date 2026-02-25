@@ -6,6 +6,7 @@ import Job from '../../models/job_role.js';
 
 export const createHiring = async (req, res) => {
     try {
+        console.log(req.body);
         const hirings = Array.isArray(req.body) ? req.body : [req.body];
 
         if (!hirings.length) {

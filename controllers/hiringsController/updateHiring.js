@@ -12,14 +12,14 @@ export const updateHiring = async (req, res) => {
                 .filter(Boolean);
         }
         if (typeof req.body.locaton === 'string') {
-            req.body.skills = req.body.skills
+            req.body.locaton = req.body.locaton
                 .split(',')
                 .map(skill => skill.trim())
                 .filter(Boolean);
         }
 
         if (typeof req.body.degree === 'string') {
-            req.body.skills = req.body.skills
+            req.body.degree = req.body.degree
                 .split(',')
                 .map(skill => skill.trim())
                 .filter(Boolean);
