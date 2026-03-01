@@ -5,8 +5,13 @@ import Job from '../../models/job_role.js';
 // @access  Private/Admin
 
 export const createHiring = async (req, res) => {
+    if (req.get("SCALIVE_SECRET") !== process.env.SCALIVE_SECRET) {
+        return res.status(401).json({
+            status: 401,
+            message: "You are not authorised"
+        });
+    }
     try {
-        console.log(req.body);
         const hirings = Array.isArray(req.body) ? req.body : [req.body];
 
         if (!hirings.length) {
