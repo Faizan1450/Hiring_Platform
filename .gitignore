@@ -25,6 +25,7 @@ build/
 
 # Frontend deps (if you add later)
 index.html
+Frontend
 
 # Coverage
 coverage/
