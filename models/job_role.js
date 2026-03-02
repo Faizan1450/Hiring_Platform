@@ -78,7 +78,6 @@ const jobSchema = new mongoose.Schema({
     ],
     platform: {
         type: String,
-        enum: ["LinkedIn", "Naukri", "Company Site", "Internal Portal", "Other"],
         required: true
     },
     redirected_link: {
