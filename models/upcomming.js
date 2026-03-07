@@ -4,30 +4,27 @@ const upcommingSchema = new mongoose.Schema(
     {
         batchName: {
             type: String,
-            required: true,
             trim: true
         },
         startingDate: {
-            type: Date,
-            required: true,
+            type: String,
+            trim: true
         },
         time: {
             type: String,
-            required: true,
+            trim: true
         },
         instructorName: {
             type: String,
-            required: true,
             trim: true
         },
         mode: {
             type: String,
-            required: true,
             trim: true
         },
         zoomRegistrationLink: {
             type: String,
-            default: null
+            trim: true
         },
     },
     {
