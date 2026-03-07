@@ -7,6 +7,7 @@ import cors from "cors"
 
 import hiringsRouter from "./routers/hiringsRouter.js";
 import healthCheckRouter from "./routers/healthCheck.js";
+import upcommingRouter from "./routers/upcommingRouter.js";
 
 dotenv.config();
 await connectDB();
@@ -15,6 +16,7 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 app.use("/api/v1/hirings", hiringsRouter)
+app.use("/api/v1/courses/upcomming", upcommingRouter)
 app.use(healthCheckRouter)
 
 //Server Start
